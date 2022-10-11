@@ -1,11 +1,12 @@
 import Express from "express";
 import CORS from "cors";
 import { graphqlHTTP } from "express-graphql";
+import {schema, resolver} from "./API";
 
 const app = Express();
 app.use(CORS()); 
 
-app.use("/paradise/search", graphqlHTTP((req, res, param) => {
+app.use("/graphql", graphqlHTTP((req, res, param) => {
     return {
         schema, 
         rootValue: resolver,
@@ -16,3 +17,7 @@ app.use("/paradise/search", graphqlHTTP((req, res, param) => {
         } 
     }
 }))
+
+app.listen(8080, () => {
+    console.log("server running")
+})

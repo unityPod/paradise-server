@@ -1,14 +1,31 @@
-import { buildSchema } from "graphql";
+import { buildSchema, GraphQLObjectType, GraphQLSchema, GraphQLInt, GraphQLString } from "graphql";
 
-export default const schema = buildSchema(`
+//Endpoint for home include all the clothing
+//Endpoint for women
+//Endpoint for men
+//Sweaters
+//Pants
+//Shopping cart 
+
+const schema = buildSchema(`
     type Query {
-        jackets(limit: Int): [Jacket]
+        items(limit: Int): [Item]
     }
 
-    type Jacket {
+    type Item {
         id: ID!
-        name: String!
-        brand: String!
+        title: String!
         price: Float!
+        description: String!
+        category: String!
+        image: String!
+    }
+
+    type ItemResponse{
+        data: Item 
+        error: String
+        ok: Boolean
     }
 `)
+
+export default schema; 
