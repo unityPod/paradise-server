@@ -1,15 +1,12 @@
 import { buildSchema, GraphQLObjectType, GraphQLSchema, GraphQLInt, GraphQLString } from "graphql";
 
-//Endpoint for home include all the clothing
-//Endpoint for women
-//Endpoint for men
-//Sweaters
-//Pants
-//Shopping cart 
-
 const schema = buildSchema(`
     type Query {
         items(limit: Int): [Item]
+        men(limit: Int): [Item]
+        women(limit: Int): [Item]
+        electronics(limit: Int): [Item]
+        jewelery(limit: Int): [Item]
     }
 
     type Item {

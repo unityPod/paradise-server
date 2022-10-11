@@ -4,7 +4,11 @@ import { graphqlHTTP } from "express-graphql";
 import {schema, resolver} from "./API";
 
 const app = Express();
-app.use(CORS()); 
+app.use(CORS({
+    origin: "https://visionary-blini-6d1d65.netlify.app"
+})); 
+
+
 
 app.use("/graphql", graphqlHTTP((req, res, param) => {
     return {
