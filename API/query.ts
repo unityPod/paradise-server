@@ -36,14 +36,6 @@ const query = {
                  return input.limit? electronicsData.slice(0, input.limit): electronicsData
             }
          )
-     },
-    jewelery: async(input:Limit, context:Context) => {
-        return axios.get("https://fakestoreapi.com/products/").then(
-            response => {
-                 const jeweleryData = response.data.filter((item: Item)=> item.category === "jewelery")
-                 return input.limit? jeweleryData.slice(0, input.limit): jeweleryData
-            }
-         )
      }
 }
 
