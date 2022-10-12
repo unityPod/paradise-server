@@ -22,6 +22,6 @@ app.use("/graphql", graphqlHTTP((req, res, param) => {
     }
 }))
 
-app.listen(8080, () => {
+app.listen(4000, () => {
     console.log("server running")
 })
