@@ -4,7 +4,6 @@ import { graphqlHTTP } from "express-graphql";
 import { schema, resolver } from "./API";
 import connectMongoDB from "./connect";
 
-
 const app = Express();
 app.use(CORS({
     origin: [
