@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 
 type Item = {
-    id: number,
+    id: string,
     title: string, 
     price: number, 
     category: string, 
