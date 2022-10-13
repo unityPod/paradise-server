@@ -1,4 +1,4 @@
-import { buildSchema, GraphQLObjectType, GraphQLSchema, GraphQLInt, GraphQLString } from "graphql";
+import { buildSchema } from "graphql";
 
 const schema = buildSchema(`
     type Query {
@@ -10,7 +10,7 @@ const schema = buildSchema(`
     }
 
     type Item {
-        id: ID!
+        id: Int!
         title: String!
         price: Float!
         description: String!
